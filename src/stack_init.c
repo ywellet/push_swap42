@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:33:26 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/03 19:15:33 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:56:37 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static long	ft_atol(const char *str)
 	return (num * isneg);
 }
 
-void	stack_init(t_stack_node **a, char **argv, bool flag_argc_)
+void	stack_init(t_stack_node **a, char **argv)
 {
 	long	nbr;
 	int		i;
@@ -58,7 +58,7 @@ void	stack_init(t_stack_node **a, char **argv, bool flag_argc_)
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
-		append_node(a, (int)nbr);
+		append_node(a, nbr);
 		++i;
 	}
 }

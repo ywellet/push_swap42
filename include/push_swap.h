@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 20:38:05 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/03 19:22:05 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 19:50:59 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_stack_node
 //fonction
 
 int				error_write(char *s);
-void			stack_init(t_stack_node **a, char **argv, bool flag_argc_2);
+void			stack_init(t_stack_node **a, char **argv);
 void			append_node(t_stack_node **stack, int nbr);
 void			sa(t_stack_node	**a, bool checker);
 void			sb(t_stack_node **b, bool checker);
