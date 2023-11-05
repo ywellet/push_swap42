@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:21:16 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 20:12:29 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:37:27 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,4 @@ bool	stack_sorted(t_stack_node *stack)
 		stack = stack->next;
 	}
 	return (true);
-}
-
-void	handle_five(t_stack_node **a, t_stack_node **b)
-{
-	while (stack_len(*a) > 3)
-	{
-		init_nodes(*a, *b);
-		finish_rotation(a, find_smallest(*a), 'a');
-		pb(b, a);
-	}
 }

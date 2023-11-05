@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:36:14 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 20:11:19 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:37:18 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,8 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	int				len_a;
 
 	len_a = stack_len(*a);
-	if (len_a == 5)
-		handle_five(a, b);
-	else
-	{
-		while (len_a-- > 3)
+	while (len_a-- > 3)
 			pb(b, a);
-	}
 	tiny_sort(a);
 	while (*b)
 	{
