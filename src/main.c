@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 21:53:52 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 19:50:48 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:12:45 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
-			sa(&a, false);
+			sa(&a);
 		else if (stack_len(a) == 3)
 			tiny_sort(&a);
 		else

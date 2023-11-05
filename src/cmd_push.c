@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:46:32 by youellet          #+#    #+#             */
-/*   Updated: 2023/10/16 18:46:50 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:13:35 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,14 @@ static void	push(t_stack_node **dest, t_stack_node **src)
 	}
 }
 
-void	pa(t_stack_node **a, t_stack_node **b, bool checker)
+void	pa(t_stack_node **a, t_stack_node **b)
 {
 	push(a, b);
-	if (!checker)
-		write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
-void	pb(t_stack_node **b, t_stack_node **a, bool checker)
+void	pb(t_stack_node **b, t_stack_node **a)
 {
 	push(b, a);
-	if (!checker)
-		write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:03:50 by youellet          #+#    #+#             */
-/*   Updated: 2023/10/16 18:39:35 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:11:58 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,21 @@ static void	swap(t_stack_node **head)
 	(*head)->prev = NULL;
 }
 
-void	sa(t_stack_node	**a, bool checker)
+void	sa(t_stack_node	**a)
 {
 	swap(a);
-	if (!checker)
-		write(1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
-void	sb(t_stack_node **b, bool checker)
+void	sb(t_stack_node **b)
 {
 	swap(b);
-	if (!checker)
-		write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 }
 
-void	ss(t_stack_node **a, t_stack_node **b, bool checker)
+void	ss(t_stack_node **a, t_stack_node **b)
 {
 	swap(a);
 	swap(b);
-	if (!checker)
-		write(1, "ss\n", 3);
+	write(1, "ss\n", 3);
 }

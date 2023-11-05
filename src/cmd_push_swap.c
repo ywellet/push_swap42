@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:36:14 by youellet          #+#    #+#             */
-/*   Updated: 2023/10/16 19:44:27 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/04 20:11:19 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	rotate_both(t_stack_node **a,
 {
 	while (*a != cheapest_node->target_node
 		&& *b != cheapest_node)
-		rr(a, b, false);
+		rr(a, b);
 	set_current_position(*a);
 	set_current_position(*b);
 }
@@ -29,7 +29,7 @@ static void	reverse_rotate_both(t_stack_node **a,
 {
 	while (*a != cheapest_node->target_node
 		&& *b != cheapest_node)
-		rrr(a, b, false);
+		rrr(a, b);
 	set_current_position(*a);
 	set_current_position(*b);
 }
@@ -41,16 +41,16 @@ void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_na
 		if (stack_name == 'a')
 		{
 			if (top_node->above_median)
-				ra(stack, false);
+				ra(stack);
 			else
-				rra(stack, false);
+				rra(stack);
 		}
 		else if (stack_name == 'b')
 		{
 			if (top_node->above_median)
-				rb(stack, false);
+				rb(stack);
 			else
-				rrb(stack, false);
+				rrb(stack);
 		}	
 	}
 }
@@ -66,7 +66,7 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	else
 	{
 		while (len_a-- > 3)
-			pb(b, a, false);
+			pb(b, a);
 	}
 	tiny_sort(a);
 	while (*b)
@@ -78,10 +78,10 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	smallest = find_smallest(*a);
 	if (smallest->above_median)
 		while (*a != smallest)
-			ra(a, false);
+			ra(a);
 	else
 		while (*a != smallest)
-			rra(a, false);
+			rra(a);
 }
 
 static void	move_nodes(t_stack_node **a, t_stack_node **b)
@@ -97,7 +97,7 @@ static void	move_nodes(t_stack_node **a, t_stack_node **b)
 		reverse_rotate_both(a, b, cheapest_node);
 	finish_rotation(b, cheapest_node, 'b');
 	finish_rotation(a, cheapest_node->target_node, 'a');
-	pa(a, b, false);
+	pa(a, b);
 }
 
 void	set_current_position(t_stack_node *stack)
