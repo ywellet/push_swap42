@@ -20,7 +20,7 @@ int error_arg(char **argv)
 int valide_arg1(char *argv)
 {
     if ((*argv >= '0' && *argv <= '9') || (*argv == '-'))
-        return (1);
+        error_write("Error\n");
     return (0);
 
 }
