@@ -34,8 +34,8 @@ typedef struct s_stack_node
 }			t_stack_node;
 //fonction
 
-void			valide_arg1(char *argv);
-void			valide_arg2(char **argv);
+int				valide_arg1(char *argv);
+int				valide_arg2(char **argv);
 int				error_write(char *s);
 void			stack_init(t_stack_node **a, char **argv, int argc);
 void			append_node(t_stack_node **stack, int nbr);
