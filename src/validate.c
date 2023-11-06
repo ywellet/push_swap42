@@ -14,11 +14,10 @@
 
 void	valide_arg1(char *argv)
 {
-	if ((*argv >= '0' && *argv <= '9') || (*argv == '-'))
+	if (!(*argv >= '0' && *argv <= '9') || (*argv == '-'))
 		error_write("Error\n");
 }
 
 void	valide_arg2(char **argv)
 {
-	return (0);
 }
