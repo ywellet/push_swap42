@@ -61,8 +61,7 @@ void	stack_init(t_stack_node **a, char **argv, int argc)
 	{
 		valide_arg1(argv[i]);
 		nbr = ft_atol(argv[i]);
-		if (valide_arg2(argv))
-			error_write("Error");
+		valide_arg2(argv);
 		append_node(a, nbr);
 		++i;
 	}

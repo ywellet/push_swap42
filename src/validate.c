@@ -12,21 +12,13 @@
 
 #include "../include/push_swap.h"
 
-int error_arg(char **argv)
+void	valide_arg1(char *argv)
 {
-    return (0);
+	if ((*argv >= '0' && *argv <= '9') || (*argv == '-'))
+		error_write("Error\n");
 }
 
-int valide_arg1(char *argv)
+void	valide_arg2(char **argv)
 {
-    if ((*argv >= '0' && *argv <= '9') || (*argv == '-'))
-        error_write("Error\n");
-    return (0);
-
-}
-
-int valide_arg2(char **argv)
-{
-
-    return (0);
+	return (0);
 }
