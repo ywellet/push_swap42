@@ -14,12 +14,12 @@
 
 int	error_write(char *s)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	i = ft_strlen(s);
-	write(1,s,i);
-	exit(1);
+	write (1, s, i);
+	exit (1);
 }
 
 void	free_stuff(t_stack_node **stack)

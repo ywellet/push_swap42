@@ -12,10 +12,10 @@
 
 #include "../include/push_swap.h"
 
-char *ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	while (dest[i] != '\0')
@@ -51,7 +51,7 @@ static int	ft_count(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c)
-		i++;
+			i++;
 		if (s[i] != '\0')
 			count++;
 		while (s[i] && (s[i] != c))
