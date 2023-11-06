@@ -21,9 +21,9 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))
 		return(1);
-	else if (2 == argc)
+	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	stack_init(&a, argv + 1);
+	stack_init(&a, argv +1, argc);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -33,7 +33,5 @@ int	main(int argc, char **argv)
 		else
 			push_swap(&a, &b);
 	}
-	a = NULL;
-	b = NULL;
 	free_stuff(&a);
 }

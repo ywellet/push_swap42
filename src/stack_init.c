@@ -49,17 +49,25 @@ static long	ft_atol(const char *str)
 	return (num * isneg);
 }
 
-void	stack_init(t_stack_node **a, char **argv)
+void	stack_init(t_stack_node **a, char **argv, int argc)
 {
 	long	nbr;
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	while (argv[i])
 	{
 		nbr = ft_atol(argv[i]);
 		append_node(a, nbr);
 		++i;
+	}
+	if (argc == 2)
+	{
+	while (argv[j])
+		free(argv[j++]);
+		free(argv - 1);
 	}
 }
 
