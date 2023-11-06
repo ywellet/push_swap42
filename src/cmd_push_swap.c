@@ -34,8 +34,7 @@ static void	reverse_rotate_both(t_stack_node **a,
 	set_current_position(*b);
 }
 
-void	finish_rotation(t_stack_node **stack,
-						t_stack_node *top_node, char stack_name)
+void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{
@@ -52,7 +51,7 @@ void	finish_rotation(t_stack_node **stack,
 				rb(stack);
 			else
 				rrb(stack);
-		}
+		}	
 	}
 }
 
@@ -63,7 +62,7 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 
 	len_a = stack_len(*a);
 	while (len_a-- > 3)
-		pb(b, a);
+			pb(b, a);
 	tiny_sort(a);
 	while (*b)
 	{

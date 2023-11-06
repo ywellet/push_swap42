@@ -59,23 +59,17 @@ void	stack_init(t_stack_node **a, char **argv, int argc)
 	j = 0;
 	while (argv[i])
 	{
-		valide_arg1(argv[i]);
 		nbr = ft_atol(argv[i]);
-		if (valide_arg2(argv))
-			error_write("Error");
 		append_node(a, nbr);
 		++i;
 	}
 	if (argc == 2)
 	{
-		while (argv[j])
-		{
-			free(argv[j++]);
-			free(argv - 1);
-		}
+	while (argv[j])
+		free(argv[j++]);
+		free(argv - 1);
 	}
 }
-
 
 void	append_node(t_stack_node **stack, int nbr)
 {
