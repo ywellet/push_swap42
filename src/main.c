@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 21:53:52 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:15:50 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:23:49 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))
-		return(0);
+		return (0);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	stack_init(&a, argv +1, argc);

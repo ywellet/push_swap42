@@ -6,12 +6,11 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:33:26 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:20:27 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:30:18 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 static void	set_target_node(t_stack_node *a,
 							t_stack_node *b)
@@ -90,18 +89,10 @@ void	stack_init(t_stack_node **a, char **argv, int argc)
 	while (argv[i])
 	{
 		if (!is_number(argv[i]))
-		{
-			write(2, "Error\n", 6);
-			free_stuff(a);
-			exit(EXIT_FAILURE);
-		}
+			error_write("Error\n");
 		nbr = ft_atol(argv[i]);
 		if (nbr < INT_MIN || nbr > INT_MAX || has_duplicate(*a, nbr))
-		{
-			write(2, "Error\n", 6);
-			free_stuff(a);
-			exit(EXIT_FAILURE);
-		}
+			error_write("Error\n");
 		append_node(a, (int)nbr);
 		++i;
 	}

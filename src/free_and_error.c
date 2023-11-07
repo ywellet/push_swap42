@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:08:41 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 19:47:57 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:29:01 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	error_write(char *s)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	i = ft_strlen(s);
-	write(1,s,i);
+	write(2, s, i);
 	exit(1);
 }
 

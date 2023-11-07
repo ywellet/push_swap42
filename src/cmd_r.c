@@ -6,13 +6,11 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:30:16 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 20:06:38 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:22:46 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-
 
 static void	rotate(t_stack_node **stack)
 {

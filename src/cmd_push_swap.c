@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:36:14 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:18:40 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:22:36 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ static void	move_nodes(t_stack_node **a, t_stack_node **b)
 	pa(a, b);
 }
 
-void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	finish_rotation(t_stack_node **stack, 
+						t_stack_node *top_node, char stack_name)
 {
 	while (*stack != top_node)
 	{
@@ -67,7 +68,7 @@ void	finish_rotation(t_stack_node **stack, t_stack_node *top_node, char stack_na
 				rb(stack);
 			else
 				rrb(stack);
-		}	
+		}
 	}
 }
 
@@ -78,7 +79,7 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 
 	len_a = stack_len(*a);
 	while (len_a-- > 3)
-			pb(b, a);
+		pb(b, a);
 	tiny_sort(a);
 	while (*b)
 	{
