@@ -69,11 +69,11 @@ void			set_price(t_stack_node *a, t_stack_node *b);
 void			set_cheapest(t_stack_node *b);
 void			free_stuff(t_stack_node **stack);
 void			finish_rotation(t_stack_node **stack,
-							t_stack_node *top_node,
-							char stack_name);
+					t_stack_node *top_node,
+					char stack_name);
 
 //utils
-size_t	ft_strlen(const char *s);
-char	**ft_split(char *s, char c);
+size_t			ft_strlen(const char *s);
+char			**ft_split(char *s, char c);
 
 #endif
