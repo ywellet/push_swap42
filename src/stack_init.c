@@ -6,11 +6,41 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:33:26 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 19:46:50 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:20:27 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+
+static void	set_target_node(t_stack_node *a,
+							t_stack_node *b)
+{
+	t_stack_node	*current_a;
+	t_stack_node	*target_node;
+	long			best_match_index;
+
+	while (b)
+	{
+		best_match_index = LONG_MAX;
+		current_a = a;
+		while (current_a)
+		{
+			if (current_a->value > b->value
+				&& current_a->value < best_match_index)
+			{
+				best_match_index = current_a->value;
+				target_node = current_a;
+			}
+			current_a = current_a->next;
+		}
+		if (LONG_MAX == best_match_index)
+			b->target_node = find_smallest(a);
+		else
+			b->target_node = target_node;
+		b = b->next;
+	}
+}
 
 void	init_nodes(t_stack_node *a, t_stack_node *b)
 {
@@ -105,35 +135,6 @@ void	append_node(t_stack_node **stack, int nbr)
 		last_node = find_last_node(*stack);
 		last_node->next = node;
 		node->prev = last_node;
-	}
-}
-
-static void	set_target_node(t_stack_node *a,
-							t_stack_node *b)
-{
-	t_stack_node	*current_a;
-	t_stack_node	*target_node;
-	long			best_match_index;
-
-	while (b)
-	{
-		best_match_index = LONG_MAX;
-		current_a = a;
-		while (current_a)
-		{
-			if (current_a->value > b->value
-				&& current_a->value < best_match_index)
-			{
-				best_match_index = current_a->value;
-				target_node = current_a;
-			}
-			current_a = current_a->next;
-		}
-		if (LONG_MAX == best_match_index)
-			b->target_node = find_smallest(a);
-		else
-			b->target_node = target_node;
-		b = b->next;
 	}
 }
 

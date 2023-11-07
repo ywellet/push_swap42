@@ -6,12 +6,12 @@
 #    By: youellet <youellet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:08:49 by youellet          #+#    #+#              #
-#    Updated: 2023/11/03 19:23:25 by youellet         ###   ########.fr        #
+#    Updated: 2023/11/06 20:16:04 by youellet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= push_swap
-#CFLAGS	:= -Wextra -Wall -Werror
+CFLAGS	:= -Wextra -Wall -Werror
 CC 		:= cc
 PLATFORM := $(shell uname)
 

@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 20:38:05 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 19:48:32 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:18:55 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,10 @@ void			rb(t_stack_node **b);
 int				stack_len(t_stack_node *stack);
 bool			stack_sorted(t_stack_node *stack);
 void			push_swap(t_stack_node **a, t_stack_node **b);
-static void		push(t_stack_node **dest, t_stack_node **src);
 void			pa(t_stack_node **a, t_stack_node **b);
 void			pb(t_stack_node **b, t_stack_node **a);
 void			handle_five(t_stack_node **a, t_stack_node **b);
 void			init_nodes(t_stack_node *a, t_stack_node *b);
-static void		move_nodes(t_stack_node **a, t_stack_node **b);
 void			set_current_position(t_stack_node *stack);
 t_stack_node	*find_smallest(t_stack_node *stack);
 t_stack_node	*return_cheapest(t_stack_node *stack);
@@ -74,8 +72,6 @@ void			free_stuff(t_stack_node **stack);
 void			finish_rotation(t_stack_node **stack,
 							t_stack_node *top_node,
 							char stack_name);
-static void		set_target_node(t_stack_node *a,
-							t_stack_node *b);
 
 //utils
 size_t	ft_strlen(const char *s);
