@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:33:26 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 20:01:55 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:46:50 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,26 @@ void	stack_init(t_stack_node **a, char **argv, int argc)
 	j = 0;
 	while (argv[i])
 	{
+		if (!is_number(argv[i]))
+		{
+			write(2, "Error\n", 6);
+			free_stuff(a);
+			exit(EXIT_FAILURE);
+		}
 		nbr = ft_atol(argv[i]);
-		append_node(a, nbr);
+		if (nbr < INT_MIN || nbr > INT_MAX || has_duplicate(*a, nbr))
+		{
+			write(2, "Error\n", 6);
+			free_stuff(a);
+			exit(EXIT_FAILURE);
+		}
+		append_node(a, (int)nbr);
 		++i;
 	}
 	if (argc == 2)
 	{
-	while (argv[j])
-		free(argv[j++]);
+		while (argv[j])
+			free(argv[j++]);
 		free(argv - 1);
 	}
 }

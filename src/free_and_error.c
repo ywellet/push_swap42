@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:08:41 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/03 19:16:53 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:47:57 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,30 @@ void	free_stuff(t_stack_node **stack)
 		current = tmp;
 	}
 	*stack = NULL;
+}
+
+bool	is_number(const char *str)
+{
+	if (*str == '-' || *str == '+')
+		str++;
+	if (!*str)
+		return (false);
+	while (*str)
+	{
+		if (!(*str >= '0' && *str <= '9'))
+			return (false);
+		str++;
+	}
+	return (true);
+}
+
+bool	has_duplicate(t_stack_node *a, long nbr)
+{
+	while (a)
+	{
+		if (a->value == nbr)
+			return (true);
+		a = a->next;
+	}
+	return (false);
 }

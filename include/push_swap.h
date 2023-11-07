@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 20:38:05 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 20:11:05 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:48:32 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_stack_node
 }			t_stack_node;
 //fonction
 
+bool			is_number(const char *str);
+bool			has_duplicate(t_stack_node *a, long nbr);
 int				valide_arg1(char *argv);
 int				valide_arg2(char **argv);
 int				error_write(char *s);
