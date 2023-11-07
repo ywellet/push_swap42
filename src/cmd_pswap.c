@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:36:14 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:22:36 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:36:58 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,27 @@ void	finish_rotation(t_stack_node **stack,
 	}
 }
 
+void	set_current_position(t_stack_node *stack)
+{
+	int	i;
+	int	centerline;
+
+	i = 0;
+	if (NULL == stack)
+		return ;
+	centerline = stack_len(stack) / 2;
+	while (stack)
+	{
+		stack->current_position = i;
+		if (i <= centerline)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack->next;
+		++i;
+	}
+}
+
 void	push_swap(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*smallest;
@@ -94,25 +115,4 @@ void	push_swap(t_stack_node **a, t_stack_node **b)
 	else
 		while (*a != smallest)
 			rra(a);
-}
-
-void	set_current_position(t_stack_node *stack)
-{
-	int	i;
-	int	centerline;
-
-	i = 0;
-	if (NULL == stack)
-		return ;
-	centerline = stack_len(stack) / 2;
-	while (stack)
-	{
-		stack->current_position = i;
-		if (i <= centerline)
-			stack->above_median = true;
-		else
-			stack->above_median = false;
-		stack = stack->next;
-		++i;
-	}
 }
