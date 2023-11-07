@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:46:32 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:36:33 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:41:17 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,45 @@ void	pb(t_stack_node **b, t_stack_node **a)
 {
 	push(b, a);
 	write(1, "pb\n", 3);
+}
+
+void	set_current_position(t_stack_node *stack)
+{
+	int	i;
+	int	centerline;
+
+	i = 0;
+	if (NULL == stack)
+		return ;
+	centerline = stack_len(stack) / 2;
+	while (stack)
+	{
+		stack->current_position = i;
+		if (i <= centerline)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack->next;
+		++i;
+	}
+}
+
+void	set_cheapest(t_stack_node *b)
+{
+	long			best_match_value;
+	t_stack_node	*best_match_node;
+
+	if (NULL == b)
+		return ;
+	best_match_value = LONG_MAX;
+	while (b)
+	{
+		if (b->push_price < best_match_value)
+		{
+			best_match_value = b->push_price;
+			best_match_node = b;
+		}
+		b = b->next;
+	}
+	best_match_node->cheapest = true;
 }

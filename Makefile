@@ -6,18 +6,20 @@
 #    By: youellet <youellet@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/07 15:08:49 by youellet          #+#    #+#              #
-#    Updated: 2023/11/06 20:16:04 by youellet         ###   ########.fr        #
+#    Updated: 2023/11/06 20:46:52 by youellet         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= push_swap
-CFLAGS	:= -Wextra -Wall -Werror
-CC 		:= cc
+NAME    := push_swap
+CFLAGS  := -Wextra -Wall -Werror
+CC      := cc
 PLATFORM := $(shell uname)
 
-HEADERS	:= -I ./include
-SRCS	:= $(shell find ./src -iname "*.c")
-OBJS	:= ${SRCS:.c=.o}
+HEADERS := -I ./include
+SRCS := src/cmd_pswap.c src/cmd_r.c src/cmd_swap.c src/free_and_error.c src/stack_init.c src/string_utils.c \
+        src/cmd_push.c src/cmd_rr.c src/cmd_tiny.c src/main.c src/stack_utils.c
+
+OBJS    := $(SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -26,7 +28,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(CC) $(OBJS) $(HEADERS) -o $(NAME)
-	make clean
 
 clean:
 	@rm -f $(OBJS)
@@ -34,6 +35,6 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 
-re: clean all
+re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:33:26 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:30:18 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:40:45 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,44 +127,4 @@ void	append_node(t_stack_node **stack, int nbr)
 		last_node->next = node;
 		node->prev = last_node;
 	}
-}
-
-void	set_price(t_stack_node *a, t_stack_node *b)
-{
-	int	len_a;
-	int	len_b;
-
-	len_a = stack_len(a);
-	len_b = stack_len(b);
-	while (b)
-	{
-		b->push_price = b->current_position;
-		if (!(b->above_median))
-			b->push_price = len_b - (b->current_position);
-		if (b->target_node->above_median)
-			b->push_price += b->target_node->current_position;
-		else
-			b->push_price += len_a - (b->target_node->current_position);
-		b = b->next;
-	}
-}
-
-void	set_cheapest(t_stack_node *b)
-{
-	long			best_match_value;
-	t_stack_node	*best_match_node;
-
-	if (NULL == b)
-		return ;
-	best_match_value = LONG_MAX;
-	while (b)
-	{
-		if (b->push_price < best_match_value)
-		{
-			best_match_value = b->push_price;
-			best_match_node = b;
-		}
-		b = b->next;
-	}
-	best_match_node->cheapest = true;
 }

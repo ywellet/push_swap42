@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd_push_swap.c                                    :+:      :+:    :+:   */
+/*   cmd_pswap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:36:14 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:36:58 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:39:52 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,27 +69,6 @@ void	finish_rotation(t_stack_node **stack,
 			else
 				rrb(stack);
 		}
-	}
-}
-
-void	set_current_position(t_stack_node *stack)
-{
-	int	i;
-	int	centerline;
-
-	i = 0;
-	if (NULL == stack)
-		return ;
-	centerline = stack_len(stack) / 2;
-	while (stack)
-	{
-		stack->current_position = i;
-		if (i <= centerline)
-			stack->above_median = true;
-		else
-			stack->above_median = false;
-		stack = stack->next;
-		++i;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:03:50 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/04 20:11:58 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:41:27 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,24 @@ void	ss(t_stack_node **a, t_stack_node **b)
 	swap(a);
 	swap(b);
 	write(1, "ss\n", 3);
+}
+
+void	set_price(t_stack_node *a, t_stack_node *b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = stack_len(a);
+	len_b = stack_len(b);
+	while (b)
+	{
+		b->push_price = b->current_position;
+		if (!(b->above_median))
+			b->push_price = len_b - (b->current_position);
+		if (b->target_node->above_median)
+			b->push_price += b->target_node->current_position;
+		else
+			b->push_price += len_a - (b->target_node->current_position);
+		b = b->next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: youellet <youellet@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 20:38:05 by youellet          #+#    #+#             */
-/*   Updated: 2023/11/06 20:35:36 by youellet         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:39:46 by youellet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void			rr(t_stack_node **a, t_stack_node **b);
 void			rrb(t_stack_node **b);
 void			set_price(t_stack_node *a, t_stack_node *b);
 void			set_cheapest(t_stack_node *b);
-void			set_current_position(t_stack_node *stack);
 void			free_stuff(t_stack_node **stack);
 void			finish_rotation(t_stack_node **stack,
 							t_stack_node *top_node,
